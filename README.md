@@ -29,10 +29,10 @@ The build output is `dist/`, which can be deployed to Cloudflare Pages.
 - `src/components/*` — homepage sections
 - `src/styles.css` — all layout and visual styling
 - `src/data/grants.js` — grant data and totals
-- `public/assets/` — logo, hero image, hands graphic, and the approved mockup reference
+- `public/assets/` — logo, hero image, hands graphic, and grantee logos
 
 ## Notes
 
 - The current email, phone, social links, and legal links are placeholders.
-- The three 2026 grants are populated from the information supplied for the mockup.
-- `public/assets/approved-mockup-reference.png` is included strictly as a reference while refining the code implementation.
+- The 2026 grants are populated from the information supplied for the mockup.
+- Per-grantee grant amounts are intentionally not stored in this repo; only the published fiscal-year total is.

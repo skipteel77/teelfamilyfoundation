@@ -15,11 +15,11 @@ npm run dev
 npm run build
 ```
 
-The build output is `dist/`, which can be deployed to Cloudflare Pages.
+The build output is `dist/`, which is deployed to Cloudflare as a Worker with
+static assets, configured in `wrangler.jsonc`.
 
-### Cloudflare Pages settings
+### Cloudflare build settings
 
-- Framework preset: **Vite**
 - Build command: `npm run build`
 - Build output directory: `dist`
 
@@ -36,7 +36,12 @@ The build output is `dist/`, which can be deployed to Cloudflare Pages.
 
 Routes are client-side (`react-router-dom`), so the host has to serve
 `index.html` for unknown paths or a direct visit to `/mission` will 404.
-`public/_redirects` does this on Cloudflare Pages.
+`wrangler.jsonc` does this via `not_found_handling: "single-page-application"`.
+
+Do not add a `public/_redirects` file with `/* /index.html 200`. Cloudflare
+strips `.html` from asset URLs, so that rule rewrites `/mission` to
+`/index.html`, which becomes `/index`, which matches `/*` again — the deploy
+fails with `Infinite loop detected [code: 100324]`.
 
 Links to homepage sections go through `src/components/HashLink.jsx`, which points
 them at `/#section` so they work from any route; `ScrollToTop` performs the

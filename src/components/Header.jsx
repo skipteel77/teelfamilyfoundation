@@ -6,7 +6,6 @@ const nav = [
   ['Our Focus', '#focus'],
   ['Grants', '#grants'],
   ['Impact', '#impact'],
-  ['News', '#news'],
   ['Contact', '#contact'],
 ];
 

@@ -7,7 +7,7 @@ export default function Footer() {
         <img src="/assets/teel-family-logo.png" alt="Teel Family Foundation"/>
         <p>Supporting the performing arts and K–12 education to build stronger communities and brighter futures.</p>
       </div>
-      <div><h4>Explore</h4><a href="#about">About Us</a><a href="#focus">Our Focus</a><a href="#grants">Grants</a><a href="#impact">Impact</a><a href="#news">News</a></div>
+      <div><h4>Explore</h4><a href="#about">About Us</a><a href="#focus">Our Focus</a><a href="#grants">Grants</a><a href="#impact">Impact</a></div>
       <div><h4>Get Involved</h4><a href="#partner">Apply for a Grant</a><a href="#partner">Ways to Give</a><a href="#partner">Partner With Us</a><a href="#contact">Contact</a></div>
       <div className="contact">
         <h4>Contact</h4>

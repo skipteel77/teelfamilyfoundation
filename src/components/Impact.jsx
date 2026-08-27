@@ -1,12 +1,12 @@
 import { HandHeart, Building2, Users, Sparkles } from 'lucide-react';
-import { grants, totalGranted } from '../data/grants';
+import { organizationsSupported, totalGranted } from '../data/grants';
 
 const formatMoney = (n) => new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(n);
 
 export default function Impact() {
   const metrics = [
-    { icon: HandHeart, value: formatMoney(totalGranted), label: 'Granted so far this fiscal year', tone: 'metric-green' },
-    { icon: Building2, value: grants.length, label: 'Organizations supported', tone: 'metric-purple' },
+    { icon: HandHeart, value: formatMoney(totalGranted), label: 'Granted since inception', tone: 'metric-green' },
+    { icon: Building2, value: organizationsSupported, label: 'Organizations supported', tone: 'metric-purple' },
     { icon: Users, value: '100%', label: 'Of grants support our mission priorities', tone: 'metric-orange' },
     { icon: Sparkles, value: null, label: 'Making a difference together', tone: 'metric-blue' },
   ];
@@ -21,7 +21,7 @@ export default function Impact() {
         {metrics.map(({icon: Icon, value, label, tone}) => (
           <div className="metric" key={label}>
             <div className={`metric-icon ${tone}`}><Icon size={26} strokeWidth={1.7}/></div>
-            {value && <strong>{value}</strong>}
+            <strong>{value}</strong>
             <p>{label}</p>
           </div>
         ))}

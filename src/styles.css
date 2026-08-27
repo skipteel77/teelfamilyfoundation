@@ -74,11 +74,13 @@ h2 { color: var(--navy-deep); }
 .impact-grid { display:grid; grid-template-columns: repeat(4,1fr); }
 .metric { min-height:160px; text-align:center; padding: 0 28px; display:flex; flex-direction:column; justify-content:center; align-items:center; }
 .metric + .metric { border-left:1px solid #d3d8e2; }
-.metric-icon { width:52px;height:52px;border-radius:50%;display:grid;place-items:center;color:#fff;margin-bottom:12px; }
+.metric-icon { flex:none; width:52px;height:52px;border-radius:50%;display:grid;place-items:center;color:#fff;margin-bottom:12px; }
 .metric-green{background:var(--green)} .metric-purple{background:var(--purple)} .metric-orange{background:var(--orange)} .metric-blue{background:var(--blue)}
-.metric strong { font-family:'Libre Baskerville',serif; font-size:2.2rem; font-weight:400; margin-bottom:8px; }
+/* The value and label slots are height-reserved so every column's icon, number
+   and label line up even when a metric has no number or a two-line label. */
+.metric strong { display:block; font-family:'Libre Baskerville',serif; font-size:2.2rem; font-weight:400; line-height:1.1; min-height:1.1em; margin-bottom:8px; }
 .metric-green + strong { color:var(--green); }
-.metric p { max-width:180px; margin:0; text-transform:uppercase; font-size:.78rem; font-weight:700; line-height:1.45; }
+.metric p { max-width:180px; min-height:2.9em; margin:0; text-transform:uppercase; font-size:.78rem; font-weight:700; line-height:1.45; }
 
 .grants { display:grid; grid-template-columns: 290px minmax(0,1fr); gap:56px; background:var(--cream); }
 .grants-intro h2 { font-size:1.8rem; line-height:1.3; margin:10px 0 22px; }
@@ -90,8 +92,6 @@ h2 { color: var(--navy-deep); }
 .grant-table td { padding:14px 10px; border-bottom:1px solid #d9d9d9; vertical-align:middle; }
 .grant-table td:last-child,.grant-table th:last-child { text-align:right; }
 .grant-focus span { display:block; line-height:1.5; }
-.grant-table tfoot td { border:0; padding-top:15px; }
-.grant-total { display:flex; justify-content:space-between; gap:24px; color:var(--green); font-weight:700; text-transform:uppercase; }
 .grantee-link { display:inline-block; border-radius:7px; transition:transform .2s ease, box-shadow .2s ease; }
 .grantee-link:hover { transform:translateY(-2px); box-shadow:0 6px 16px rgba(16,43,84,.16); }
 .grantee-logo { width:168px; height:auto; border-radius:7px; }

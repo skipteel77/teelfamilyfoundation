@@ -16,7 +16,6 @@ export default function App() {
         <Impact />
         <Grants />
         <PartnerCTA />
-        <section id="news" className="sr-only" aria-label="News placeholder" />
       </main>
       <Footer />
     </div>

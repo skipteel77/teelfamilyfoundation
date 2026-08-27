@@ -29,6 +29,7 @@ export const grants = [
   },
 ];
 
-// Only the fiscal-year total is kept here, since it is the one figure the site
-// publishes. Per-grantee amounts are intentionally not stored in the repo.
-export const totalGranted = 47500;
+// All-time program totals, which are the only figures the site publishes.
+// Per-grantee amounts are intentionally not stored in this repo.
+export const totalGranted = 692500;
+export const organizationsSupported = 15;

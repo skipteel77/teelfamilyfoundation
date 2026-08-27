@@ -1,7 +1,4 @@
-import { ArrowRight } from 'lucide-react';
-import { grants, totalGranted } from '../data/grants';
-
-const money = (n) => new Intl.NumberFormat('en-US', { style:'currency', currency:'USD', minimumFractionDigits:2 }).format(n);
+import { grants } from '../data/grants';
 
 export default function Grants() {
   return (
@@ -10,7 +7,6 @@ export default function Grants() {
         <p className="eyebrow orange">Recent Grants</p>
         <h2>Investing in Organizations That Create Lasting Impact</h2>
         <p>We are proud to partner with incredible organizations doing meaningful work in the arts and in education.</p>
-        <a className="text-link" href="#grants">View All Grants <ArrowRight size={16}/></a>
       </div>
       <div className="grant-table-wrap">
         <table className="grant-table">
@@ -27,13 +23,6 @@ export default function Grants() {
               </tr>
             ))}
           </tbody>
-          <tfoot>
-            <tr>
-              <td colSpan="2">
-                <span className="grant-total">Total granted so far this fiscal year <b>{money(totalGranted)}</b></span>
-              </td>
-            </tr>
-          </tfoot>
         </table>
       </div>
     </section>

@@ -1,4 +1,5 @@
-import { Drama, GraduationCap, Users } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { ArrowRight, Drama, GraduationCap, Users } from 'lucide-react';
 
 const focusItems = [
   {
@@ -37,6 +38,7 @@ export default function Mission() {
           </article>
         ))}
       </div>
+      <Link className="text-link mission-more" to="/mission">Read Our Full Mission <ArrowRight size={16}/></Link>
     </section>
   );
 }

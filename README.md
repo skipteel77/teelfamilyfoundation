@@ -25,14 +25,25 @@ The build output is `dist/`, which can be deployed to Cloudflare Pages.
 
 ## Main places to edit
 
-- `src/App.jsx` — page composition
-- `src/components/*` — homepage sections
+- `src/App.jsx` — routes and shared page chrome
+- `src/pages/*` — `Home` (the one-page composition) and `MissionPage` (`/mission`)
+- `src/components/*` — homepage sections and shared pieces
 - `src/styles.css` — all layout and visual styling
 - `src/data/grants.js` — grant data and totals
 - `public/assets/` — logo, hero image, hands graphic, and grantee logos
 
+## Routing
+
+Routes are client-side (`react-router-dom`), so the host has to serve
+`index.html` for unknown paths or a direct visit to `/mission` will 404.
+`public/_redirects` does this on Cloudflare Pages.
+
+Links to homepage sections go through `src/components/HashLink.jsx`, which points
+them at `/#section` so they work from any route; `ScrollToTop` performs the
+scroll after the route lands.
+
 ## Notes
 
-- The current email, phone, social links, and legal links are placeholders.
+- The current email, phone, and legal links are placeholders.
 - The 2026 grants are populated from the information supplied for the mockup.
-- Per-grantee grant amounts are intentionally not stored in this repo; only the published fiscal-year total is.
+- Per-grantee grant amounts are intentionally not stored in this repo; only the published all-time total is.

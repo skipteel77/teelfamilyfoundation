@@ -1,21 +1,20 @@
+import { Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
-import Hero from './components/Hero';
-import Mission from './components/Mission';
-import Impact from './components/Impact';
-import Grants from './components/Grants';
-import PartnerCTA from './components/PartnerCTA';
 import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop';
+import Home from './pages/Home';
+import MissionPage from './pages/MissionPage';
 
 export default function App() {
   return (
     <div className="site-shell">
+      <ScrollToTop />
       <Header />
       <main>
-        <Hero />
-        <Mission />
-        <Impact />
-        <Grants />
-        <PartnerCTA />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/mission" element={<MissionPage />} />
+        </Routes>
       </main>
       <Footer />
     </div>

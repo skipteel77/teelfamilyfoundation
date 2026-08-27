@@ -1,8 +1,9 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
+import HashLink from './HashLink';
 
 const nav = [
-  ['About', '#about'],
   ['Our Focus', '#focus'],
   ['Grants', '#grants'],
   ['Impact', '#impact'],
@@ -11,17 +12,19 @@ const nav = [
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const close = () => setOpen(false);
   return (
     <header className="site-header">
-      <a className="brand" href="#top" aria-label="Teel Family Foundation home">
+      <Link className="brand" to="/" onClick={close} aria-label="Teel Family Foundation home">
         <img src="/assets/teel-family-logo.png" alt="Teel Family Foundation" />
-      </a>
+      </Link>
       <button className="mobile-menu" onClick={() => setOpen(!open)} aria-label="Toggle navigation">
         {open ? <X size={26}/> : <Menu size={26}/>} 
       </button>
       <nav className={open ? 'nav open' : 'nav'}>
-        {nav.map(([label, href]) => <a key={label} href={href} onClick={() => setOpen(false)}>{label}</a>)}
-        <a className="button button-green nav-cta" href="#partner" onClick={() => setOpen(false)}>Get Involved</a>
+        <Link to="/mission" onClick={close}>Our Mission</Link>
+        {nav.map(([label, hash]) => <HashLink key={label} hash={hash} onClick={close}>{label}</HashLink>)}
+        <HashLink className="button button-green nav-cta" hash="#partner" onClick={close}>Get Involved</HashLink>
       </nav>
     </header>
   );

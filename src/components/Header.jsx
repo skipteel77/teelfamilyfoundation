@@ -7,7 +7,6 @@ const nav = [
   ["Our Focus", "#focus"],
   ["Grants", "#grants"],
   ["Impact", "#impact"],
-  ["Contact", "#contact"],
 ];
 
 export default function Header() {
@@ -36,6 +35,9 @@ export default function Header() {
         </Link>
         <Link to="/history" onClick={close}>
           Our History
+        </Link>
+        <Link to="/contact" onClick={close}>
+          Contact
         </Link>
         {nav.map(([label, hash]) => (
           <HashLink key={label} hash={hash} onClick={close}>

@@ -5,6 +5,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import Home from "./pages/Home";
 import MissionPage from "./pages/MissionPage";
 import HistoryPage from "./pages/HistoryPage";
+import ContactPage from "./pages/ContactPage";
 
 export default function App() {
   return (
@@ -16,6 +17,7 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/mission" element={<MissionPage />} />
           <Route path="/history" element={<HistoryPage />} />
+          <Route path="/contact" element={<ContactPage />} />
         </Routes>
       </main>
       <Footer />

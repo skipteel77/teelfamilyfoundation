@@ -211,13 +211,16 @@ export default function HistoryPage() {
       <section className="history-future section">
         <div className="history-future-inner">
           <p className="eyebrow orange">Looking Ahead</p>
-          <h2>Continuing the work together</h2>
+          <h2>The Next Generation</h2>
           <p>
-            More than two decades after its founding, the Teel Family Foundation
-            is entering a new chapter. A younger generation of family members
-            now serves on the board, bringing new experiences, perspectives, and
-            ideas about the organizations and communities the foundation might
-            support.
+            More than two decades after its founding, a new generation of the
+            Teel family is helping shape the foundation’s future. Younger board
+            members, including Karen and Woody's grandchildren Maggie, Chloe,
+            and Anabelle, bring fresh perspectives and new ideas about the
+            organizations and communities the foundation can support. Their
+            involvement reflects the foundation’s evolution from something
+            established by Woody and Karen Teel into a family-led organization
+            intended to carry its values forward across generations.
           </p>
           <p>
             The organizations may change and the foundation’s reach may evolve,

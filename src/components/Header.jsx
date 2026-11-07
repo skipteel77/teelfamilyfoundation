@@ -36,21 +36,25 @@ export default function Header() {
         <Link to="/history" onClick={close}>
           Our History
         </Link>
-        <Link to="/contact" onClick={close}>
-          Contact
-        </Link>
         {nav.map(([label, hash]) => (
           <HashLink key={label} hash={hash} onClick={close}>
             {label}
           </HashLink>
         ))}
-        <HashLink
+        {/* <HashLink
           className="button button-green nav-cta"
           hash="#partner"
           onClick={close}
         >
           Get Involved
-        </HashLink>
+        </HashLink> */}
+        <Link
+          className="button button-green nav-cta"
+          to="/contact"
+          onClick={close}
+        >
+          Contact
+        </Link>
       </nav>
     </header>
   );

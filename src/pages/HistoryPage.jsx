@@ -1,4 +1,5 @@
 import { BookOpen, Drama, GraduationCap, Sparkles, Users } from "lucide-react";
+import PartnerPerspective from "../components/PartnerPerspective";
 
 const milestones = [
   {
@@ -192,6 +193,8 @@ export default function HistoryPage() {
           ))}
         </div>
       </section>
+
+      <PartnerPerspective />
 
       <section className="history-belief">
         <div className="history-belief-inner">

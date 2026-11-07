@@ -25,8 +25,8 @@ img { max-width: 100%; display: block; }
 /* Keeps anchored sections clear of the sticky header when linked to directly. */
 section[id], footer[id] { scroll-margin-top: 112px; }
 .section { padding: 72px clamp(24px, 7vw, 88px); }
-.eyebrow { margin: 0 0 12px; text-transform: uppercase; font-size: .78rem; font-weight: 700; letter-spacing: .08em; color: var(--green); }
-.eyebrow.purple { color: var(--purple); text-align: center; }
+.eyebrow { margin: 0 0 12px; font-family: 'DM Sans', system-ui, sans-serif; text-transform: uppercase; font-size: .78rem; font-weight: 700; letter-spacing: .08em; color: var(--green); }
+.eyebrow.purple { color: var(--purple); }
 .eyebrow.orange { color: var(--orange); }
 h1,h2,h3 { font-family: 'Libre Baskerville', Georgia, serif; font-weight: 400; }
 h1 { margin: 0; color: var(--navy-deep); font-size: clamp(2.4rem, 5vw, 4.8rem); line-height: 1.15; letter-spacing: -.035em; }
@@ -376,13 +376,9 @@ h2 { color: var(--navy-deep); }
 }
 
 .history-impact-heading {
-  max-width: 780px;
+  max-width: 1100px;
   margin: 0 auto 42px;
-  text-align: center;
-}
-
-.history-impact-heading .eyebrow {
-  text-align: center;
+  text-align: left;
 }
 
 .history-impact-heading h2 {
@@ -391,7 +387,7 @@ h2 { color: var(--navy-deep); }
 }
 
 .history-impact-heading > p:not(.eyebrow) {
-  margin: 0 auto;
+  margin: 0;
   max-width: 700px;
   line-height: 1.75;
   color: #40516a;
@@ -588,5 +584,306 @@ h2 { color: var(--navy-deep); }
 
   .history-belief {
     padding: 54px 22px;
+  }
+}
+
+.section-kicker {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 22px;
+
+  color: #536c3f;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.section-kicker__line {
+  width: 44px;
+  height: 1px;
+  background: #d89947;
+}
+
+
+/* ----------------------------------------------------------
+   Homepage featured quote
+---------------------------------------------------------- */
+
+.impact-feature {
+  position: relative;
+  overflow: hidden;
+  padding: 88px 24px;
+
+  background:
+    radial-gradient(
+      circle at 8% 90%,
+      rgba(126, 160, 108, 0.12),
+      transparent 25%
+    ),
+    #fbfaf6;
+}
+
+.impact-feature__inner {
+  width: min(1180px, 100%);
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1.3fr 0.8fr;
+  align-items: center;
+  gap: 72px;
+}
+
+.impact-feature__content {
+  min-width: 0;
+}
+
+.impact-feature__quote {
+  position: relative;
+  margin: 0;
+  padding: 12px 0 0 42px;
+
+  color: #153d32;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.45rem, 2.4vw, 2.05rem);
+  line-height: 1.35;
+  font-style: italic;
+}
+
+.impact-feature__quote p {
+  margin: 0;
+}
+
+.quote-mark {
+  position: absolute;
+  top: -4px;
+  left: 0;
+
+  color: #9db68f;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 4.2rem;
+  line-height: 1;
+}
+
+.impact-feature__byline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+
+  margin-top: 28px;
+  margin-left: 42px;
+}
+
+.impact-feature__attribution {
+  display: flex;
+  gap: 16px;
+  min-width: 0;
+}
+
+.impact-feature__accent {
+  width: 2px;
+  flex: 0 0 2px;
+  background: #d89947;
+}
+
+.impact-feature__attribution > div:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+
+  color: #24352f;
+  font-size: 0.95rem;
+  line-height: 1.35;
+}
+
+.impact-feature__attribution strong {
+  color: #153d32;
+  font-size: 1.05rem;
+}
+
+.impact-feature__logo {
+  width: min(210px, 42%);
+  height: auto;
+  flex: 0 0 auto;
+  object-fit: contain;
+}
+
+.impact-feature__image img {
+  width: 100%;
+  display: block;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+
+  border-radius: 4px;
+}
+
+
+/* ----------------------------------------------------------
+   Responsive
+---------------------------------------------------------- */
+
+@media (max-width: 850px) {
+  .impact-feature {
+    padding: 64px 20px;
+  }
+
+  .impact-feature__inner {
+    grid-template-columns: 1fr;
+    gap: 42px;
+  }
+
+  .impact-feature__image {
+    order: -1;
+  }
+}
+
+@media (max-width: 560px) {
+  .impact-feature__quote {
+    padding-left: 30px;
+    font-size: 1.4rem;
+  }
+
+  .quote-mark {
+    font-size: 3.4rem;
+  }
+
+  .impact-feature__byline {
+    flex-wrap: wrap;
+    margin-left: 30px;
+  }
+
+  .impact-feature__logo {
+    width: 168px;
+  }
+}
+
+.partner-perspective {
+  background: #f6f3eb;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.partner-perspective__inner {
+  width: min(1100px, 100%);
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 28px 56px;
+  align-items: start;
+}
+
+.partner-perspective__header {
+  grid-column: 1 / -1;
+  margin: 0 0 4px;
+  text-align: left;
+}
+
+.partner-perspective__body {
+  margin: 0;
+  padding-top: 8px;
+
+  color: #46504c;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.partner-perspective__quote {
+  position: relative;
+
+  padding: 48px 52px;
+
+  background: #eee8dc;
+  border-radius: 12px;
+}
+
+.partner-perspective__mark {
+  position: absolute;
+  left: 28px;
+  top: 14px;
+
+  color: #96ad83;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 5rem;
+  line-height: 1;
+}
+
+.partner-perspective blockquote {
+  margin: 0;
+  padding-left: 28px;
+
+  color: #213d34;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.45rem, 2.5vw, 2rem);
+  font-style: italic;
+  line-height: 1.35;
+}
+
+.partner-perspective__person {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px 28px;
+
+  margin-top: 30px;
+  margin-left: 28px;
+}
+
+.partner-perspective__attribution {
+  display: flex;
+  gap: 16px;
+  min-width: 0;
+}
+
+.partner-perspective__line {
+  width: 2px;
+  flex: 0 0 2px;
+  background: #d89947;
+}
+
+.partner-perspective__attribution > div:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+
+  color: #3f4945;
+  font-size: 0.9rem;
+  line-height: 1.35;
+}
+
+.partner-perspective__person strong {
+  color: #173e33;
+  font-size: 1rem;
+}
+
+.partner-perspective__logo {
+  width: 168px;
+  height: 128px;
+  flex: 0 0 168px;
+  object-fit: cover;
+  object-position: 8% 6%;
+}
+
+
+@media (max-width: 800px) {
+  .partner-perspective__inner {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .partner-perspective__quote {
+    padding: 44px 28px;
+  }
+
+  .partner-perspective__person {
+    margin-left: 0;
+  }
+
+  .partner-perspective__logo {
+    width: 136px;
+    height: 104px;
+    flex-basis: 136px;
   }
 }
